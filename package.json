@@ -1,5 +1,5 @@
 {
-  "name": "@kizorasoftware/country-state-city",
+  "name": "@kizorasoftware/city-state-country",
   "version": "1.0.0",
   "description": "Library for fetching Country, its States and Cities",
   "main": "dist/index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kizorasoftware/country-state-city"
+    "url": "https://github.com/kizorasoftware/city-state-country"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/kizorasoftware"
@@ -37,7 +37,7 @@
     "Search",
     "Filter"
   ],
-  "homepage": "https://github.com/KizoraSoftware/country-state-city#readme",
+  "homepage": "https://github.com/KizoraSoftware/city-state-country#readme",
   "devDependencies": {
     "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
