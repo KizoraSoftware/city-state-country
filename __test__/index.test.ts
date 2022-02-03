@@ -1,8 +1,15 @@
 /* eslint-disable no-shadow */
-import { Country, State, City } from '../index';
-import { ICountry, ICity, IState } from '../lib/interface';
+import {Country, State, City} from '../index';
+import {ICountry, ICity, IState} from '../lib/interface';
 
 const executeAllTests = function (Country: any, State: any, City: any) {
+	beforeAll(cb => {
+		(async () => {
+			await Promise.resolve();
+			cb();
+		})()
+	}, 15000)
+
 	test('Check for Country By Code ', () => {
 		const code = 'CA';
 		const country: ICountry = Country.getCountryByCode(code);

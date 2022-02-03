@@ -1,11 +1,13 @@
 import {findEntryByCode} from '../utils';
-import {ICity, ICountry} from './interface';
-import {makeHttpRequest} from "./http-util";
+import {ICountry} from './interface';
+import fetch from 'cross-fetch';
 
 let country: ICountry[] = [];
-makeHttpRequest('https://cdn.kizora.in/city-state-country/country.json', response => {
-	country = response
-})
+
+(async () => {
+	let res = await fetch('https://cdn.kizora.in/city-state-country/country.json');
+	country = await res.json()
+})();
 
 // Get a country by isoCode.
 function getCountryByCode(isoCode: string): ICountry | undefined {

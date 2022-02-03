@@ -1,11 +1,13 @@
 import {findEntryByCode, findStateByCodeAndCountryCode, compare} from '../utils';
-import {ICity, IState} from "./interface";
-import {makeHttpRequest} from "./http-util";
+import {IState} from "./interface";
+import fetch from 'cross-fetch';
 
 let state: IState[] = [];
-makeHttpRequest('https://cdn.kizora.in/city-state-country/city.json', response => {
-	state = response
-})
+
+(async () => {
+	let res = await fetch('https://cdn.kizora.in/city-state-country/state.json');
+	state = await res.json()
+})();
 
 // Get a list of all states.
 export function getAllStates(): Array<IState> {

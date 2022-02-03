@@ -1,5 +1,5 @@
 // importing interfaces from main index.ts file
-import { ICountry } from '../lib/interface';
+import {ICountry} from '../lib/interface';
 
 // writing tests for Interfaces
 // https://stackoverflow.com/questions/14425568/interface-type-check-with-typescript
@@ -7,6 +7,13 @@ import { ICountry } from '../lib/interface';
 function isValidCountryObjectStructure(object: any): object is ICountry {
 	return 'name' in object && 'phonecode' in object && 'isoCode' in object && 'flag' in object;
 }
+
+beforeAll(cb => {
+	(async () => {
+		await Promise.resolve();
+		cb();
+	})()
+}, 15000)
 
 test('Check for Interface export when Type Structure is Same', () => {
 	const country = {

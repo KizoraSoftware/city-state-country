@@ -1,11 +1,12 @@
 import {compare} from '../utils';
 import {ICity} from "./interface";
-import {makeHttpRequest} from './http-util'
+import fetch from 'cross-fetch';
 
 let city: ICity[] = [];
-makeHttpRequest('https://cdn.kizora.in/city-state-country/city.json', response => {
-	city = response
-})
+(async () => {
+	let res = await fetch('https://cdn.kizora.in/city-state-country/city.json');
+	city = await res.json()
+})();
 
 // Get a list of all cities.
 function getAllCities(): any[] {
