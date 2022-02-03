@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "declaration": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "lib": [
+	  "es5",
+	  "es2015",
+	  "es6",
+	  "dom"
+	],
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true  
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
