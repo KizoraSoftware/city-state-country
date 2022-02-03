@@ -18,7 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KizoraSoftware/country-state-city.git"
+    "url": "https://github.com/kizorasoftware/country-state-city"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/kizorasoftware"
   },
   "husky": {
     "hooks": {

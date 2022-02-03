@@ -1,14 +1,19 @@
-import state from './init';
-import { findEntryByCode, findStateByCodeAndCountryCode, compare } from '../utils';
-import { IState } from './interface';
+import {findEntryByCode, findStateByCodeAndCountryCode, compare} from '../utils';
+import {ICity, IState} from "./interface";
+import {makeHttpRequest} from "./http-util";
+
+let state: IState[] = [];
+makeHttpRequest('https://cdn.kizora.in/city-state-country/city.json', response => {
+	state = response
+})
 
 // Get a list of all states.
-export function getAllStates(): IState[] {
+export function getAllStates(): Array<IState> {
 	return state;
 }
 
 // Get a list of states belonging to a specific country.
-export function getStatesOfCountry(countryCode: string): IState[] {
+export function getStatesOfCountry(countryCode: string): Array<IState> {
 	if (!countryCode) return [];
 	const states = state.filter((value) => {
 		return value.countryCode === countryCode;
